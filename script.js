@@ -106,43 +106,7 @@
     revealables.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  /* ---------- 5. Counting numbers in the hero stats ---------- */
-  var counters = document.querySelectorAll('.count');
-
-  function runCounter(el) {
-    var target = parseInt(el.dataset.to, 10) || 0;
-    var suffix = el.dataset.suffix || '';
-    if (reduceMotion) {
-      el.textContent = target + suffix;
-      return;
-    }
-    var duration = 1500;
-    var start = performance.now();
-
-    function step(now) {
-      var p = Math.min((now - start) / duration, 1);
-      // Ease out so it decelerates into the final number.
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased) + suffix;
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  if ('IntersectionObserver' in window) {
-    var countObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        runCounter(entry.target);
-        countObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(function (el) { countObserver.observe(el); });
-  } else {
-    counters.forEach(runCounter);
-  }
-
-  /* ---------- 6. Nav state, scroll progress, active link ---------- */
+  /* ---------- 5. Nav state, scroll progress, active link ---------- */
   var nav = document.getElementById('nav');
   var bar = document.getElementById('progress-bar');
   var sections = Array.prototype.slice.call(
@@ -185,7 +149,7 @@
 
   onScroll();
 
-  /* ---------- 7. Glow that follows the pointer ---------- */
+  /* ---------- 6. Glow that follows the pointer ---------- */
   var glow = document.querySelector('.cursor-glow');
 
   if (window.matchMedia('(pointer: fine)').matches && !reduceMotion) {
@@ -199,7 +163,7 @@
     });
   }
 
-  /* ---------- 8. Starfield on a canvas ---------- */
+  /* ---------- 7. Starfield on a canvas ---------- */
   var canvas = document.getElementById('stars');
   var ctx = canvas.getContext('2d');
   var stars = [];
@@ -270,7 +234,7 @@
     requestAnimationFrame(paint);
   }
 
-  /* ---------- 9. A small hello for anyone who opens DevTools ---------- */
+  /* ---------- 8. A small hello for anyone who opens DevTools ---------- */
   console.log(
     '%cKehkasha Dumasia%c\nThanks for looking under the hood.\nThe source lives at https://github.com/kehkashaf/kehkashaf.github.io',
     'font-size:20px;font-weight:bold;color:#7c5cff',
