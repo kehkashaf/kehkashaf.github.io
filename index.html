@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kehkasha Dumasia — Building things for the web</title>
+<meta name="description" content="Kehkasha Dumasia's personal site — projects, skills, and how to get in touch. Built from scratch with HTML, CSS and JavaScript." />
+<meta name="author" content="Kehkasha Dumasia" />
+
+<meta property="og:title" content="Kehkasha Dumasia — Building things for the web" />
+<meta property="og:description" content="Projects, skills, and how to get in touch." />
+<meta property="og:type" content="website" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#10022;</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Animated background layers -->
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="aurora" aria-hidden="true">
+  <span class="blob blob-1"></span>
+  <span class="blob blob-2"></span>
+  <span class="blob blob-3"></span>
+</div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- Scroll progress bar -->
+<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Home">
+    <span class="brand-mark">K</span>
+    <span class="brand-text">Kehkasha Dumasia</span>
+  </a>
+
+  <nav class="nav-links" id="nav-links" aria-label="Primary">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#work">Work</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button id="theme-toggle" class="icon-btn" aria-label="Switch colour theme" title="Switch theme">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
+    </button>
+    <button id="menu-toggle" class="icon-btn menu-only" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow reveal"><span class="pulse"></span> Available for opportunities</p>
+
+      <h1 class="hero-title reveal">
+        <span class="line">Hi, I&rsquo;m</span>
+        <span class="line gradient-text">Kehkasha Dumasia.</span>
+      </h1>
+
+      <p class="hero-role reveal">
+        I build <span id="typed" class="typed"></span><span class="caret" aria-hidden="true"></span>
+      </p>
+
+      <p class="hero-copy reveal">
+        This is my corner of the internet &mdash; hand-coded, version-controlled, and
+        open for anyone to read. Everything you see here lives in a public
+        repository on GitHub, so the code behind the page is part of the page.
+      </p>
+
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#work">
+          See my work
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/kehkashaf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" class="gh" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8 0-.8 0-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+          View the code
+        </a>
+      </div>
+
+      <dl class="stats reveal">
+        <div class="stat"><dt>Projects shipped</dt><dd class="count" data-to="12">0</dd></div>
+        <div class="stat"><dt>Technologies used</dt><dd class="count" data-to="9">0</dd></div>
+        <div class="stat"><dt>Commits this year</dt><dd class="count" data-to="240" data-suffix="+">0</dd></div>
+      </dl>
+    </div>
+
+    <a class="scroll-cue" href="#about" aria-label="Scroll to about"><span></span></a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="section-head reveal">
+      <span class="kicker">01 &mdash; About</span>
+      <h2>A short version of the story</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p class="lead">
+          I&rsquo;m Kehkasha Dumasia &mdash; a builder who likes turning a rough
+          idea into something people can actually open in a browser.
+        </p>
+        <p>
+          I started the way most people do: curious, a little intimidated, and
+          convinced everyone else already knew the secret. It turns out there
+          isn&rsquo;t one. There&rsquo;s just the loop &mdash; build a small thing, break
+          it, read the error, fix it, and end up understanding something you
+          didn&rsquo;t an hour ago.
+        </p>
+        <p>
+          What keeps me going is the moment an idea stops being a sketch and
+          starts responding to a click. I care about work that is clear to read,
+          kind to the person using it, and honest about what it does. This site
+          is the first entry in a list I intend to keep adding to.
+        </p>
+
+        <ul class="facts">
+          <li><span>Focus</span> Front-end &amp; the web</li>
+          <li><span>Currently</span> Learning by shipping</li>
+          <li><span>Open to</span> Internships, collaboration, good problems</li>
+        </ul>
+      </div>
+
+      <aside class="about-card reveal">
+        <div class="code-window">
+          <div class="code-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="code-file">kehkasha.js</span>
+          </div>
+<pre class="code"><code><span class="c-k">const</span> <span class="c-v">kehkasha</span> = {
+  <span class="c-p">role</span>: <span class="c-s">"Developer &amp; maker"</span>,
+  <span class="c-p">believes</span>: <span class="c-s">"ship, then refine"</span>,
+  <span class="c-p">stack</span>: [<span class="c-s">"HTML"</span>, <span class="c-s">"CSS"</span>, <span class="c-s">"JS"</span>],
+  <span class="c-p">learning</span>: <span class="c-s">"whatever is next"</span>,
+
+  <span class="c-f">build</span>(idea) {
+    <span class="c-k">while</span> (!idea.works) {
+      idea.<span class="c-f">tryAgain</span>();
+    }
+    <span class="c-k">return</span> idea.<span class="c-f">ship</span>();
+  }
+};</code></pre>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section" id="skills">
+    <div class="section-head reveal">
+      <span class="kicker">02 &mdash; Toolkit</span>
+      <h2>What I build with</h2>
+      <p class="section-sub">The tools I reach for, and the ones I&rsquo;m growing into.</p>
+    </div>
+
+    <div class="skill-grid">
+      <article class="card reveal">
+        <div class="card-icon">&lt;/&gt;</div>
+        <h3>Structure</h3>
+        <p>Semantic HTML that a screen reader and a search engine can both make sense of.</p>
+        <ul class="tags"><li>HTML5</li><li>Accessibility</li><li>SEO basics</li></ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">&#10022;</div>
+        <h3>Style</h3>
+        <p>Modern CSS &mdash; grid, flexbox, custom properties, and animation that has a reason to exist.</p>
+        <ul class="tags"><li>CSS3</li><li>Responsive</li><li>Animation</li></ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">&#9889;</div>
+        <h3>Behaviour</h3>
+        <p>Vanilla JavaScript for interaction &mdash; no framework needed to make a page feel alive.</p>
+        <ul class="tags"><li>JavaScript</li><li>DOM</li><li>Canvas</li></ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">&#8994;</div>
+        <h3>Version control</h3>
+        <p>Git and GitHub: every change has a message, a history, and a way back.</p>
+        <ul class="tags"><li>Git</li><li>GitHub</li><li>Pages</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section class="section" id="work">
+    <div class="section-head reveal">
+      <span class="kicker">03 &mdash; Work</span>
+      <h2>Things I&rsquo;ve built</h2>
+      <p class="section-sub">Starting with the one you&rsquo;re looking at.</p>
+    </div>
+
+    <div class="work-grid">
+      <article class="project featured reveal">
+        <div class="project-tag">Live now</div>
+        <h3>This website</h3>
+        <p>
+          A one-page personal site written from scratch &mdash; no template, no build
+          step. An animated starfield on canvas, a theme that remembers your
+          choice, scroll-triggered reveals, and a layout that holds up from a
+          phone to a wide monitor. Deployed straight from its GitHub repository
+          with GitHub Pages.
+        </p>
+        <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Canvas</li><li>GitHub Pages</li></ul>
+        <div class="project-links">
+          <a href="https://github.com/kehkashaf/kehkashaf.github.io" target="_blank" rel="noopener">Source code &rarr;</a>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-tag soft">Next up</div>
+        <h3>Project two</h3>
+        <p>The next thing I build goes here &mdash; with what it does, what I learned, and a link to its own repository.</p>
+        <ul class="tags"><li>Coming soon</li></ul>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-tag soft">Next up</div>
+        <h3>Project three</h3>
+        <p>Room to grow. A portfolio is a list you keep adding to, not a page you finish once.</p>
+        <ul class="tags"><li>Coming soon</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ JOURNEY ============ -->
+  <section class="section" id="journey">
+    <div class="section-head reveal">
+      <span class="kicker">04 &mdash; Journey</span>
+      <h2>How this page came to exist</h2>
+    </div>
+
+    <ol class="timeline">
+      <li class="reveal">
+        <h3>Decide what is worth a page</h3>
+        <p>An idea with real details beats a generic template every time. Mine was simple: a place that is actually mine.</p>
+      </li>
+      <li class="reveal">
+        <h3>Write the code</h3>
+        <p>Structure in HTML, look in CSS, life in JavaScript. Three files, one page, no magic.</p>
+      </li>
+      <li class="reveal">
+        <h3>Put it on GitHub</h3>
+        <p>A repository gives the work a home: a link anyone can read, a full history of every version, and a door for other people to contribute.</p>
+      </li>
+      <li class="reveal">
+        <h3>Publish it live</h3>
+        <p>GitHub Pages serves the repository straight to the web &mdash; so the code and the site stay the same thing, kept in sync by every commit.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="contact-card reveal">
+      <span class="kicker">05 &mdash; Contact</span>
+      <h2>Let&rsquo;s build something</h2>
+      <p>Got an idea, an opportunity, or a question? I read everything that lands in my inbox.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:kehkashadumasia98@gmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18v11H3z"/><path d="m3 7 9 6 9-6"/></svg>
+          Email me
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/kehkashaf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" class="gh" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8 0-.8 0-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+          @kehkashaf
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Built by hand by <strong>Kehkasha Dumasia</strong> &mdash; HTML, CSS &amp; JavaScript.</p>
+  <p class="muted">Hosted on GitHub Pages. <a href="https://github.com/kehkashaf/kehkashaf.github.io" target="_blank" rel="noopener">Read the source</a>.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
